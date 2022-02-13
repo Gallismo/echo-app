@@ -10,7 +10,9 @@ class author extends Model
     use HasFactory;
 
     protected $fillable = [
-        'FIO',
+        'last_name',
+        'first_name',
+        'middle_name',
         'avatar',
         'birth_year',
         'slug'
