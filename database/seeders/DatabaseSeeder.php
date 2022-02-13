@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        author::factory(100)->create();
+        author::factory(1000)->create();
 
         category::factory(10)
             ->create()
@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
                     }));
             });
 
-        post::factory(100)->create()->each(function ($post) {
-            for ($count = 1; $count <= rand(1,3); $count++) {
+        post::factory(10000)->create()->each(function ($post) {
+            for ($count = 1; $count <= rand(1,2); $count++) {
                 post_categories::create([
                     'post_id' => $post->id,
                     'category_id' => category::inRandomOrder()->first()->id
